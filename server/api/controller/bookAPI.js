@@ -11,7 +11,8 @@ exports.addBook = async (req, res) => {
         const ISBN = req.body.ISBN;
         const Publisher = req.body.Publisher;
         const Genre = req.body.Genre;
-
+        const password = req.body.password;
+        const login = req.body.login;
         let doc = await bookSchema.findOne({ ISBN: ISBN })
         if (!doc) {
             const book = new bookSchema({
